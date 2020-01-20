@@ -64,4 +64,6 @@ Route::get('/courses/{course}/learning_objects/create', 'Learning_objectsControl
 //Route::get('/lesson_units/{lesson_unit}/showlearningobjects', 'Learning_objectsController@showlearningobjects');
 Route::post('{/learning_objects', 'Learning_objectsController@store');
 
+Route::resource('quizs','quizController');
+
 

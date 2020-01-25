@@ -45,4 +45,18 @@ class User extends Authenticatable
     public function moodle_courses(){
         return $this->hasMany('App\MoodleCourse');
     }
+
+        public function learners()
+    {
+        return $this->hasOne('App\Learner');
+    } 
+
+        public function teachers()
+    {
+        return $this->hasOne('App\Teacher');
+    }
+        public function admins()
+    {
+        return $this->hasOne('App\Admin','id');
+    }
 }

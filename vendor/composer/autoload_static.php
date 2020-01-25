@@ -408,6 +408,7 @@ class ComposerStaticInitbe6817a4f1f406791d694cf457ea625f
     );
 
     public static $classMap = array (
+        'App\\Admin' => __DIR__ . '/../..' . '/app/Admin.php',
         'App\\Classes\\Webservice' => __DIR__ . '/../..' . '/app/Classes/Webservice.php',
         'App\\Concept' => __DIR__ . '/../..' . '/app/Concept.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
@@ -424,12 +425,14 @@ class ComposerStaticInitbe6817a4f1f406791d694cf457ea625f
         'App\\Http\\Controllers\\CourseModulesController' => __DIR__ . '/../..' . '/app/Http/Controllers/CourseModulesController.php',
         'App\\Http\\Controllers\\CoursesController' => __DIR__ . '/../..' . '/app/Http/Controllers/CoursesController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\LearnerController' => __DIR__ . '/../..' . '/app/Http/Controllers/LearnerController.php',
         'App\\Http\\Controllers\\Learning_objectsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Learning_objectsController.php',
         'App\\Http\\Controllers\\Lesson_unitsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Lesson_unitsController.php',
         'App\\Http\\Controllers\\MoodleConceptsController' => __DIR__ . '/../..' . '/app/Http/Controllers/MoodleConceptsController.php',
         'App\\Http\\Controllers\\MoodleCoursesController' => __DIR__ . '/../..' . '/app/Http/Controllers/MoodleCoursesController.php',
         'App\\Http\\Controllers\\PagesController' => __DIR__ . '/../..' . '/app/Http/Controllers/PagesController.php',
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
+        'App\\Http\\Controllers\\TeacherController' => __DIR__ . '/../..' . '/app/Http/Controllers/TeacherController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -438,6 +441,7 @@ class ComposerStaticInitbe6817a4f1f406791d694cf457ea625f
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Learner' => __DIR__ . '/../..' . '/app/Learner.php',
         'App\\Learning_object' => __DIR__ . '/../..' . '/app/Learning_object.php',
         'App\\Learning_style' => __DIR__ . '/../..' . '/app/Learning_style.php',
         'App\\Lesson_unit' => __DIR__ . '/../..' . '/app/Lesson_unit.php',
@@ -449,6 +453,7 @@ class ComposerStaticInitbe6817a4f1f406791d694cf457ea625f
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Teacher' => __DIR__ . '/../..' . '/app/Teacher.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'BeyondCode\\DumpServer\\DumpServerCommand' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerCommand.php',
         'BeyondCode\\DumpServer\\DumpServerServiceProvider' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerServiceProvider.php',

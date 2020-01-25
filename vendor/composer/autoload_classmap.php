@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Admin' => $baseDir . '/app/Admin.php',
     'App\\Classes\\Webservice' => $baseDir . '/app/Classes/Webservice.php',
     'App\\Concept' => $baseDir . '/app/Concept.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
@@ -22,12 +23,14 @@ return array(
     'App\\Http\\Controllers\\CourseModulesController' => $baseDir . '/app/Http/Controllers/CourseModulesController.php',
     'App\\Http\\Controllers\\CoursesController' => $baseDir . '/app/Http/Controllers/CoursesController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
+    'App\\Http\\Controllers\\LearnerController' => $baseDir . '/app/Http/Controllers/LearnerController.php',
     'App\\Http\\Controllers\\Learning_objectsController' => $baseDir . '/app/Http/Controllers/Learning_objectsController.php',
     'App\\Http\\Controllers\\Lesson_unitsController' => $baseDir . '/app/Http/Controllers/Lesson_unitsController.php',
     'App\\Http\\Controllers\\MoodleConceptsController' => $baseDir . '/app/Http/Controllers/MoodleConceptsController.php',
     'App\\Http\\Controllers\\MoodleCoursesController' => $baseDir . '/app/Http/Controllers/MoodleCoursesController.php',
     'App\\Http\\Controllers\\PagesController' => $baseDir . '/app/Http/Controllers/PagesController.php',
     'App\\Http\\Controllers\\ProfileController' => $baseDir . '/app/Http/Controllers/ProfileController.php',
+    'App\\Http\\Controllers\\TeacherController' => $baseDir . '/app/Http/Controllers/TeacherController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\CheckForMaintenanceMode' => $baseDir . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -36,6 +39,7 @@ return array(
     'App\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'App\\Learner' => $baseDir . '/app/Learner.php',
     'App\\Learning_object' => $baseDir . '/app/Learning_object.php',
     'App\\Learning_style' => $baseDir . '/app/Learning_style.php',
     'App\\Lesson_unit' => $baseDir . '/app/Lesson_unit.php',
@@ -47,6 +51,7 @@ return array(
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
+    'App\\Teacher' => $baseDir . '/app/Teacher.php',
     'App\\User' => $baseDir . '/app/User.php',
     'BeyondCode\\DumpServer\\DumpServerCommand' => $vendorDir . '/beyondcode/laravel-dump-server/src/DumpServerCommand.php',
     'BeyondCode\\DumpServer\\DumpServerServiceProvider' => $vendorDir . '/beyondcode/laravel-dump-server/src/DumpServerServiceProvider.php',

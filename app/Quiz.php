@@ -7,16 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 class Quiz extends Model
 {
     protected $fillable = [
-        'user_id',
         'course_id',
         'title',
-        'slug',
+        'mark',
         'description'
     ];
 
-    public function user()
+    protected $table = 'quizzes';
+    public $primaryKey = 'id';
+    public $timestamps = true;
+
+    public function learnerQuiz()
     {
-        return $this->belongsTo(User::class);
+        return $this->hasMany(LearnerQuiz::class);
     }
 
     public function course()
@@ -26,11 +29,11 @@ class Quiz extends Model
 
     public function questions()
     {
-        return $this->hasMany(QuizQuestion::class);
+        return $this->hasMany(Question::class);
     }
 
-    public function questionAnswers()
+    public function result()
     {
-        return $this->hasMany(QuizQuestionAnswer::class);
+        return $this->hasMany(Result::class);
     }
 }

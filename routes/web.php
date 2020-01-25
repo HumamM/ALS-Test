@@ -32,6 +32,11 @@ Route::resource('learning_objects', 'Learning_objectsController');
 Route::resource('moodle_courses', 'MoodleCoursesController');
 Route::resource('moodle_concepts', 'MoodleConceptsController');
 Route::resource('course_modules', 'CourseModulesController');
+Route::resource('profiles', 'ProfileController');
+Route::resource('learner', 'LearnerController');
+Route::resource('teacher', 'teacherController');
+Route::resource('admin', 'AdminController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

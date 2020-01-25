@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Profile;
+use App\Admin;
 use Illuminate\Http\Request;
+use App\User;
 
-class ProfileController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +42,10 @@ class ProfileController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Profile  $profile
+     * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function show(Profile $profile)
+    public function show(Admin $admin)
     {
         //
     }
@@ -52,38 +53,52 @@ class ProfileController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Profile  $profile
+     * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function edit(Profile $profile)
+    public function edit(Admin $admin)
     {
-        //
+        $admin = Course::find($admin);
+
+        //Check for right user
+        if(auth()->user()->id !==$admin->user_id){
+            return redirect('/courses')->with('error', 'Unathorized Page');
+        }
+
+        return view('courses.edit')->with('course', $course);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Profile  $profile
+     * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Profile $profile)
+    public function update(Request $request, Admin $admin)
     {
-        //
-    }
+        $this->validate($request,[
+            'name' => 'required'
+        ]);
 
-      public function updateAdminProfile(Request $request, Profile $profile)
-    {
-        //
+        //Create Course
+       
+        $admin_data = User::find($admin->id);
+        $admin_data->name = $request->input('name');
+        $admin_data->save();
+
+        return redirect ('/home')->with('success', 'Profile Updated');
+    
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Profile  $profile
+     * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Profile $profile)
+    public function destroy(Admin $admin)
     {
         //
     }

@@ -1,0 +1,8 @@
+.profile-image{
+	width: 150px;
+	background-color: rgb(0,0,0,0.5); 
+}
+
+.profile-name{
+	text-transform: capitalize;
+}

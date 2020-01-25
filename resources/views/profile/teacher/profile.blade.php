@@ -1,50 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Teacher Dashboard</div>
+<div class="row justify-content-center">
+        <div class="col-sm-10">
+            <div class="row">
 
-                <div class="card-body">
-                    <a href="/courses/create" class="btn btn-primary">Create Course</a>
-                    <p>
-                    <h3>Your Courses</h3>
-                    @if(count($courses) > 0)
-                        <table class="table table-striped">
-                            <tr>
-                                <th>Title</th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                            @foreach($courses as $course)
-                                <tr>
-                                    <td>{{$course->title}}</td>
-                                    <td><a href="/courses/{{$course->id}}/edit" class="btn btn-outline-secondary btn-light">Edit</a></td>
-                                    <td>
-                                        {!!Form::open(['action'=> ['CoursesController@destroy', $course->id], 'method' => 'POST', 'class' => 'float-right'])!!}
-                                        {{Form::hidden('_method', 'DELETE')}}
-                                        {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
-                                        {!!Form::close()!!}
-                                    </td>
-
-                                </tr>
-                            @endforeach
-                        </table>
-                    @else
-                        <p>You have no courses.</p>
-                    @endif
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
+                <div class="col-sm-3">
+                    <h2>Teacher Profile Panel</h2>
+                    <img src="/images/user/default.png" alt="This is profile picture" class="profile-image rounded-circle">
+                </div>
+                
+                <div class="col-sm-9">                    
+                 <h3 class="profile-name"> {{Auth::User()->teachers->material_name}}</h3> 
+                 <hr>
+                 <div class="button-primary">
+                     <h1>Edit Profile</h1>
+                     {{Form::open(['action'=> ['TeacherController@update', Auth::User()->id], 'method' => 'POST'])}}
+                     <div class="form-group">
+                        {{Form::label('material_name', 'Material Name')}}
+                        {{Form::text('material_name', Auth::User()->material_name, ['class' => 'form-control', 'placeholder' => 'Material Name'])}}
+                    </div>
+                    {{Form::hidden('_method', 'PUT')}}
+                    {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
+                    {{Form::close()}}
                 </div>
             </div>
         </div>
-    </div>
-</div>
+
 @endsection

@@ -52,12 +52,12 @@ class User extends Authenticatable
 
         public function learners()
     {
-        return $this->hasOne('App\Learner');
+        return $this->hasOne('App\Learner','id');
     } 
 
         public function teachers()
     {
-        return $this->hasOne('App\Teacher');
+        return $this->hasOne('App\Teacher','id');
     }
         public function admins()
     {

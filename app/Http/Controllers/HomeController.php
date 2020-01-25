@@ -29,14 +29,14 @@ class HomeController extends Controller
         // return view('home')->with('courses', $user->courses);
 
         if ($user->role =="Teacher")
-            return view('home')->with('courses', $user->courses);
+            return view('profile.teacher.home')->with('courses', $user->courses);
 
         elseif ($user->role == "Learner")
             return view('profile.learner.profile')->with('courses', $user->courses);
 
 
         elseif ($user->role == "Admin")
-            return view('profile.admin.profile')->with('courses', $user->courses);
+            return view('profile.admin.home')->with('courses', $user->courses);
 
 
         else return view('home')->with('courses', $user->courses);

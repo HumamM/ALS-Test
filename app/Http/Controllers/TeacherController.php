@@ -57,7 +57,14 @@ class TeacherController extends Controller
      */
     public function edit(Teacher $teacher)
     {
-        //
+      $user = Teacher::find($teacher);
+
+        //Check for right user
+        if(auth()->user()->id !==$teacher->id){
+            return redirect('/home')->with('error', 'Unathorized Page');
+        }
+
+        return view('profile.teacher.profile')->with('teacher',$user);
     }
 
     /**
@@ -69,7 +76,19 @@ class TeacherController extends Controller
      */
     public function update(Request $request, Teacher $teacher)
     {
-        //
+        $this->validate($request,[
+            'material_name' => 'required'
+        ]);
+
+        //Create Course
+       
+        $teacher_data = User::find($teacher->id);
+        $teacher_data->name = $request->input('material_name');
+        $teacher_data->save();
+
+        return redirect ('/home')->with('success', 'Profile Updated');
+    
+
     }
 
     /**

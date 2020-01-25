@@ -13,9 +13,14 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+       public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
-        //
+        return view('profile.admin.home');
     }
 
     /**
@@ -58,14 +63,14 @@ class AdminController extends Controller
      */
     public function edit(Admin $admin)
     {
-        $admin = Course::find($admin);
+        $user = Admin::find($admin);
 
         //Check for right user
-        if(auth()->user()->id !==$admin->user_id){
-            return redirect('/courses')->with('error', 'Unathorized Page');
+        if(auth()->user()->id !==$admin->id){
+            return redirect('/home')->with('error', 'Unathorized Page');
         }
 
-        return view('courses.edit')->with('course', $course);
+        return view('profile.admin.profile')->with('admin',$user);
     }
 
     /**
@@ -78,13 +83,15 @@ class AdminController extends Controller
     public function update(Request $request, Admin $admin)
     {
         $this->validate($request,[
-            'name' => 'required'
+            'name' => 'required',
+            'admin_number'=>'required'
         ]);
 
         //Create Course
        
         $admin_data = User::find($admin->id);
         $admin_data->name = $request->input('name');
+        $admin_data->admin_number=$request->input('admin_number');
         $admin_data->save();
 
         return redirect ('/home')->with('success', 'Profile Updated');

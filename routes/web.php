@@ -34,7 +34,7 @@ Route::resource('moodle_concepts', 'MoodleConceptsController');
 Route::resource('course_modules', 'CourseModulesController');
 Route::resource('profiles', 'ProfileController');
 Route::resource('learner', 'LearnerController');
-Route::resource('teacher', 'teacherController');
+Route::resource('teacher', 'TeacherController');
 Route::resource('admin', 'AdminController');
 
 Auth::routes();

@@ -38,8 +38,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function courses(){
-        return $this->hasMany('App\Course');
+    public function UserCourse(){
+        return $this->hasMany('App\UserCourse');
+    }
+
+    public function UserQuiz(){
+        return $this->hasMany('App\UserQuiz');
     }
 
     public function moodle_courses(){

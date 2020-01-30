@@ -11,6 +11,7 @@
                     <a href="/courses/create" class="btn btn-primary">Create Course</a>
                     <p>
                     <h3>Your Courses</h3>
+                    @if (is_array($courses))
                     @if(count($courses) > 0)
                         <table class="table table-striped">
                             <tr>
@@ -34,6 +35,7 @@
                         </table>
                     @else
                         <p>You have no courses.</p>
+                    @endif
                     @endif
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">

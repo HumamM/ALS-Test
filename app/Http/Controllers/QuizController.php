@@ -13,9 +13,17 @@ class quizController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //$course = Course::where('quiz_id',$id)->get();
+        //$course = Course::find($id);
+        $course = Course::with('quizzes')->find($id);
+
+        if ($course) {
+
+            return view('quizzes.create', compact('course'));
+        }else{
+            return view('quizzes.edit' , compact('id'));
+        }
     }
 
     /**

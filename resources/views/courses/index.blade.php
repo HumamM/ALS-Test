@@ -6,7 +6,7 @@
         @foreach($courses as $course)
             <div class="card">
             <h3><a href="/courses/{{$course->id}}">{{$course->title}}</a></h3>
-            <small>Created at {{$course->created_at}} by {{$course->user->name}}</small>
+            <small>Created at {{$course->created_at}} by </small>
             </div>
         @endforeach
         {{$courses->links()}}

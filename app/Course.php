@@ -17,4 +17,8 @@ class Course extends Model
     public function UserCourse(){
         return $this->hasMany('App\UserCourse');
     }
+
+    public function Quizzes(){
+        return $this->hasMany('App\Quiz');
+    }
 }

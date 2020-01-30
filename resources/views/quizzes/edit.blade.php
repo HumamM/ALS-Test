@@ -3,7 +3,7 @@
 @section('content')
 
 
-
+<h3>edit quizzes</h3>
 
 
 
